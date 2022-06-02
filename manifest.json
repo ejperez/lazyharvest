@@ -1,0 +1,17 @@
+{
+	"name": "LazyHarvest",
+	"version": "0.0.1",
+	"description": "Extract data from Harvest site",
+	"manifest_version": 3,
+	"author": "EJ",
+	"action": {
+		"default_popup": "index.html",
+		"default_title": "LazyHarvest"
+	},
+	"permissions": [
+		"scripting"
+	],
+	"host_permissions": [
+		"https://stok.harvestapp.com/*"
+	]
+}

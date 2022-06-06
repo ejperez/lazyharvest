@@ -1,5 +1,25 @@
 const output = document.getElementById( 'output' ),
-	copyButton = document.getElementById( 'js-copy' );
+	copyButton = document.getElementById( 'js-copy' ),
+	templates = {
+		daily: `What I did today/yesterday/last week:
+[output]
+
+What I will do today/tomorrow:
+[output]
+
+My impediments are:
+None`,
+		weekly: `Hi! This is a great week for me. :)
+Stress level is 5/10.
+
+Here's what I've done this week:
+[output]
+
+Impediments:
+None
+
+Thank you.`
+	};
 
 function extractDaily () {
 	if ( !document.getElementById( 'day-view-entries' ) ) {
@@ -73,7 +93,7 @@ document.getElementById( 'js-extract-daily' ).addEventListener( 'click', () => {
 				},
 				( injectionResults ) => {
 					for ( const frameResult of injectionResults ) {
-						output.value += frameResult.result;
+						output.value = templates.daily.replaceAll( '[output]', frameResult.result );
 					}
 				}
 			);
@@ -94,7 +114,7 @@ document.getElementById( 'js-extract-weekly' ).addEventListener( 'click', () => 
 				},
 				( injectionResults ) => {
 					for ( const frameResult of injectionResults ) {
-						output.value += frameResult.result;
+						output.value = templates.weekly.replaceAll( '[output]', frameResult.result );
 					}
 				}
 			);

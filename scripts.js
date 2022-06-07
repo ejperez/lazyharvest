@@ -94,6 +94,8 @@ document.getElementById( 'js-extract-daily' ).addEventListener( 'click', () => {
 				( injectionResults ) => {
 					for ( const frameResult of injectionResults ) {
 						output.value = templates.daily.replaceAll( '[output]', frameResult.result );
+						output.style.display = 'block';
+						copyButton.style.display = 'block';
 					}
 				}
 			);
@@ -115,6 +117,8 @@ document.getElementById( 'js-extract-weekly' ).addEventListener( 'click', () => 
 				( injectionResults ) => {
 					for ( const frameResult of injectionResults ) {
 						output.value = templates.weekly.replaceAll( '[output]', frameResult.result );
+						output.style.display = 'block';
+						copyButton.style.display = 'block';
 					}
 				}
 			);

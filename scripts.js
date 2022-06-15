@@ -1,10 +1,10 @@
 const output = document.getElementById( 'output' ),
 	copyButton = document.getElementById( 'js-copy' ),
 	templates = {
-		daily: `What I did today/yesterday/last week:
+		daily: `What I did today:
 [output]
 
-What I will do today/tomorrow:
+What I will do tomorrow:
 [output]
 
 My impediments are:
